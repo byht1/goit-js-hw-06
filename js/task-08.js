@@ -17,4 +17,3 @@ const formValid = event => {
 };
 
 form.addEventListener('submit', formValid);
-
