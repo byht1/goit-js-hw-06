@@ -1,14 +1,20 @@
 const form = document.querySelector('.login-form');
-const email = form.firstElementChild.lastElementChild;
-const buttonSubmit = form.lastElementChild;
-const obj = {};
-email.addEventListener('input', () => {
-  obj.email = email.value;
-  console.log(email.value);
-});
 
-buttonSubmit.addEventListener('submit', () => {
-  obj.email = email.value;
-});
+const formValid = event => {
+  event.preventDefault();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-console.log(obj);
+  if (!email.value || !password.value) {
+    return alert('Всі елементи форми повині бути заповненими');
+  }
+  const formData = new FormData(event.currentTarget);
+
+  event.currentTarget.reset();
+
+  return formData;
+};
+
+form.addEventListener('submit', formValid);
+
