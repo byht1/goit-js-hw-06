@@ -17,7 +17,6 @@ let array = [];
 const construcror = event => {
   const a = document.getElementsByTagName('input')[0].value;
   const element = document.querySelectorAll('.activ');
-  console.log('🚀 ~ element', element);
   let w = 30;
   if (element.length > 0) {
     w = 30 + element.length * 10;
