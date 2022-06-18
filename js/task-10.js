@@ -16,13 +16,20 @@ let array = [];
 
 const construcror = event => {
   const a = document.getElementsByTagName('input')[0].value;
+  const element = document.querySelectorAll('.activ');
+  console.log('🚀 ~ element', element);
+  let w = 30;
+  if (element.length > 0) {
+    w = 30 + element.length * 10;
+  }
 
   for (let i = 1; i <= a; i += 1) {
     const element = document.createElement('div');
     element.id = `${randoms()}`;
-    element.style.width = `${30 + i * 10}px`;
-    element.style.height = `${30 + i * 10}px`;
+    element.style.width = `${w + i * 10}px`;
+    element.style.height = `${w + i * 10}px`;
     element.style.backgroundColor = `${getRandomHexColor()}`;
+    element.classList.add('activ');
 
     array.push(element);
   }

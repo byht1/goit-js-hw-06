@@ -9,11 +9,15 @@ const formValid = event => {
   if (!email.value || !password.value) {
     return alert('Всі елементи форми повині бути заповненими');
   }
-  const formData = new FormData(event.currentTarget);
+  const obj = {
+    [email.name]: email.value,
+    [password.name]: password.value,
+  };
+  console.log(obj);
 
   event.currentTarget.reset();
 
-  return formData;
+  return;
 };
 
 form.addEventListener('submit', formValid);
