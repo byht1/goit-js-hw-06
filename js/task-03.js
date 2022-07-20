@@ -34,6 +34,6 @@ const list = document.querySelector('.gallery');
 
 const elementPhoto = ({ url, alt }) =>
   `<li class='element'> <img class='element__photo' src='${url}' alt='${alt}'/></li>`;
-const array = images.map(elementPhoto);
+const array = images.map(elementPhoto).join('');
 
 list.insertAdjacentHTML('beforeend', array);
