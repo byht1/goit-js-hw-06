@@ -38,7 +38,6 @@ const construcror = event => {
 
 const construcrorDelete = () => {
   const a = rest.conteinet;
-  console.log('🚀 ~ a', a);
   while (a.firstChild) {
     a.removeChild(a.firstChild);
   }
